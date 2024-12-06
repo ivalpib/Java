@@ -4,7 +4,6 @@ public class LearningMethods {
 
 	public static void main(String[] args) {
 		
-		System.out.println("fsffdfdf");
 		String randString = MyUtils.printSomeJunk("This is some piece of data");
 		System.out.println(randString);
 		int randNum = MyUtils.printSomeJunk(37);
@@ -13,6 +12,6 @@ public class LearningMethods {
 		int myvar = MyUtils.add10(99)+100 - 10;
 		System.out.println(myvar);
 	}
-	
+	 
 
 }

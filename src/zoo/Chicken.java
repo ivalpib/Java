@@ -2,13 +2,12 @@ package zoo;
 
 public class Chicken extends Bird {
 
-	public Chicken(int age, String gender, String className) {
-		super(age, gender, className);
-		// TODO Auto-generated constructor stub
+	public Chicken(String name, int age, String type) {
+		super(name, age, type);
+		
+	}
+	public void move(){
+		System.out.println("Chicken runs on ground and does not fly.");
 	}
 
-	//overriding the method fly 
-//	public void fly() {
-//		System.out.println("not able to fly..");
-//	}
 }

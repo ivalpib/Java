@@ -4,7 +4,6 @@ public class MyUtils {
 
 	public static String printSomeJunk(String argument) {
 //		System.out.println("blah blah blah "+ argument);
-		argument = argument + " check me";
 		return argument;
 	}
 	public static int printSomeJunk(int argument) {
@@ -19,4 +18,10 @@ public class MyUtils {
 		int result = someArg + 10;
 		return result; 
 	}
+	@Override
+	public String toString() {
+		return "MyUtils [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	} 
+	
 }

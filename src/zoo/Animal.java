@@ -1,30 +1,44 @@
 package zoo;
 
 public abstract class Animal {
+	String name;
 	int age;
-	String gender;
-	String className;
+	String type;
 	
-	
-	public Animal(int age, String gender, String className) {
+	public Animal(String name, int age, String type) {
 		super();
+		this.name = name;
 		this.age = age;
-		this.gender = gender;
-		this.className = className;
+		this.type = type;
 	}
-
-
-	public void info() {
-		System.out.println("This is a " + className);
-		System.out.println("This "+className+" is "+ age + " years old and it is a "+gender);
+	public String getName() {
+		return name;
 	}
-	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	@Override
+	public String toString() {
+		return "Animal [name=" + name + ", age=" + age + ", type=" + type + "]";
+	}  
 	public void eat() {
-		System.out.println("Eating....");
+		System.out.println("is eating...");
 	}
 	public void sleep() {
-		System.out.println("Sleeping....");
+		System.out.println("is sleeping...");
 	}
+	
 	public abstract void move();
-
 }

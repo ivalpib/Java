@@ -14,6 +14,6 @@ public class Earth {
 		Henri = new Human("Henri Sombat", 18, "White", "Male");
 		Henri.speak();
 
-	}
+	} 
 
 }

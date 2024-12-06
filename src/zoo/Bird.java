@@ -1,14 +1,14 @@
 package zoo;
 
 public class Bird extends Animal {
-	
-	public Bird(int age, String gender, String className) {
-		super(age, gender, className);
-		
-	}
 
-	public void move() {
-		System.out.println("Bird is Flying..."); 
+	public Bird(String name, int age, String type) {
+		super(name, age, type);
 		
 	}
+	
+	public void move() {
+		System.out.println("Bird want to fly");
+	}
+	
 }
