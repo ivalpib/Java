@@ -4,21 +4,37 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import myUtils.MyUtil;
+
 public class Application {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter some text: ");
 		String enteredText = input.next();
 		System.out.println(enteredText);
-
-		File file = new File("myFile.txt");
-		Scanner scan = new Scanner(file);
-		while (scan.hasNextLine()) {
-			String line = scan.nextLine();
-			System.out.println(line);
+		input.close(); // always good to close 
+		
+		try {
+			File file = new File("myFile.txt");
+			Scanner scan = new Scanner(file);
+			while (scan.hasNextLine()) {
+				String line = scan.nextLine();
+				System.out.println(line);
+			}
+			scan.close();
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
 		}
-		scan.close();
+		
+		MyUtil util = new MyUtil();
+		try {
+			System.out.println(util.calculateNumber(4));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }
