@@ -7,7 +7,7 @@ import java.util.Scanner;
 import myUtils.MyUtil;
 
 public class Application {
-
+ 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter some text: ");
@@ -16,11 +16,11 @@ public class Application {
 		input.close(); // always good to close 
 		
 		try {
-			File file = new File("myFile.txt");
+			File file = new File("myFiles.txt");
 			Scanner scan = new Scanner(file);
 			while (scan.hasNextLine()) {
 				String line = scan.nextLine();
-				System.out.println(line);
+				System.out.println(line); 
 			}
 			scan.close();
 		} catch (FileNotFoundException e) {
@@ -33,6 +33,7 @@ public class Application {
 			System.out.println(util.calculateNumber(4));
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 
 	}
