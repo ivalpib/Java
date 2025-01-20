@@ -11,25 +11,26 @@ public class Application {
 
 	public static void main(String[] args) throws FileNotFoundException{
 		File file = new File("myFile.txt");
-		MyUtil abc = new MyUtil();
-		Calculate ab = new Calculate();
-		try {
-			System.out.println(ab.CalculateSomething("something"));
-			abc.calculateNumber(3); 
-			Scanner scan = new Scanner(file);
-			while(scan.hasNextLine()) { 
-				String line = scan.nextLine();
-				System.out.println(line);
+		try (MyUtil abc = new MyUtil();
+				Calculate ab = new Calculate();
+				Scanner scan = new Scanner(file)) {
+			try {
+				System.out.println(ab.CalculateSomething("none"));
+				abc.calculateNumber(3);
+				while (scan.hasNextLine()) {
+					String line = scan.nextLine();
+					System.out.println(line);
+				}
+			} catch (CalculateException e) {
+				e.printStackTrace();
+			} catch (myUtils.MyUtil.CalculateException e) {
+				e.printStackTrace();
 			}
-			
-		}  catch (myUtils.MyUtil.CalculateException  e) {
+		} catch (FileNotFoundException e) {
+			throw e;
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		catch (CalculateException e) {
-			e.printStackTrace();
-		}
-		
-
 	}
 
 }

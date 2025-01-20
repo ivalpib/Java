@@ -1,6 +1,6 @@
 package myUtils;
 
-public class MyUtil {
+public class MyUtil implements AutoCloseable{
 	public int calculateNumber(int n) throws CalculateException {
 		if (n < 5) {
 			throw new CalculateException("input number is less than 5");
@@ -14,6 +14,12 @@ public class MyUtil {
 		public CalculateException(String string) {
 			super(string);
 		}
+	}
+
+	@Override
+	public void close() throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
